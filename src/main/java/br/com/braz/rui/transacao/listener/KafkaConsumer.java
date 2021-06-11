@@ -10,13 +10,8 @@ import org.springframework.stereotype.Service;
 public class KafkaConsumer {
 
     @KafkaListener(topics = "transacoes", groupId = "group_id")
-    public void consume(String message) throws JsonProcessingException {
-        System.out.println("Consumed message: " + message);
-        try {
-            TransacaoDTO transacaoDTO = new ObjectMapper().readValue(message, TransacaoDTO.class);
-            System.out.println("convertido.");
-        } catch (Exception e) {
-            System.out.println("Causa: " + e.getCause());
-        }
+    public void consume(TransacaoDTO transacao) {
+        System.out.println("Consumed message: " + transacao);
+
     }
 }
