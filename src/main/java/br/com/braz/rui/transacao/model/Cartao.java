@@ -9,4 +9,17 @@ public class Cartao {
     @Id
     private String id;
     private String email;
+
+    @Deprecated
+    public Cartao(){
+
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

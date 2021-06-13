@@ -2,6 +2,7 @@ package br.com.braz.rui.transacao.dto;
 
 import br.com.braz.rui.transacao.model.Cartao;
 import br.com.braz.rui.transacao.model.Estabelecimento;
+import br.com.braz.rui.transacao.model.Transacao;
 
 import java.time.LocalDateTime;
 
@@ -56,6 +57,11 @@ public class TransacaoDTO {
     public void setEfetivadaEm(LocalDateTime efetivadaEm) {
         this.efetivadaEm = efetivadaEm;
     }
+
+    public Transacao toModel(){
+        return new Transacao(this.id, this.valor, this.estabelecimento, this.cartao, this.efetivadaEm);
+    }
+
 
     @Override
     public String toString() {
