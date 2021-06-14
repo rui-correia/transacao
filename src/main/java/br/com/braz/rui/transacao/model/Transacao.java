@@ -30,5 +30,23 @@ public class Transacao {
         this.efetivadaEm = efetivadaEm;
     }
 
+    public String getId() {
+        return id;
+    }
 
+    public String getValor() {
+        return valor;
+    }
+
+    public Estabelecimento getEstabelecimento() {
+        return estabelecimento;
+    }
+
+    public Cartao getCartao() {
+        return cartao;
+    }
+
+    public LocalDateTime getEfetivadaEm() {
+        return efetivadaEm;
+    }
 }
