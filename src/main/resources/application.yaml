@@ -10,11 +10,16 @@ spring:
   jpa:
     database-platform: postgres
     generate-ddl: true
-
     properties:
       hibernate:
         ddl-auto: update
         dialect: org.hibernate.dialect.PostgreSQLDialect
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:18080/auth/realms/transacoes}
+          jwk-set-uri: ${KEYCLOAK_JWKS_URI:http://localhost:18080/auth/realms/transacoes/protocol/openid-connect/certs}
 
 variable:
   postgres: localhost
